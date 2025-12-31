@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "ContentModerator.Controllers.MessagesController",
+    "Method": "GetAllMessages",
+    "RelativePath": "api/Messages",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

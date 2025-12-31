@@ -1,0 +1,6 @@
+@ContentModerator_HostAddress = http://localhost:5057
+
+GET {{ContentModerator_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
