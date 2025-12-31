@@ -1,4 +1,5 @@
 using ContentModerator.Data;
+using ContentModerator.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddHttpClient<AnalyzeMessageService>();
+builder.Services.AddScoped<AnalyzeMessageService>();
 
 var app = builder.Build();
 
