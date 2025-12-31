@@ -19,5 +19,6 @@ namespace ContentModerator.Models
         public Guid UserId { get; set; }
         public User User { get; set; } = null!;
 
+        public bool IsBlocked  { get; set; } = false;
     }
 }

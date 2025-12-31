@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "uz2sAM5ooRI=",
+  "dgSpecHash": "kZYLaAYNwaE=",
   "success": true,
   "projectFilePath": "C:\\Users\\senab\\gitbum\\ai-content-moderator\\backend\\ContentModerator\\ContentModerator\\ContentModerator.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\senab\\.nuget\\packages\\htmlagilitypack\\1.12.4\\htmlagilitypack.1.12.4.nupkg.sha512",
     "C:\\Users\\senab\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\senab\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\senab\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",

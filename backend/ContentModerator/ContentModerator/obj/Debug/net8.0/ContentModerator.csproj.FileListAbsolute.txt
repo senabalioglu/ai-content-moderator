@@ -135,3 +135,4 @@ C:\Users\senab\gitbum\ai-content-moderator\backend\ContentModerator\ContentModer
 C:\Users\senab\gitbum\ai-content-moderator\backend\ContentModerator\ContentModerator\obj\Debug\net8.0\ContentModerator.pdb
 C:\Users\senab\gitbum\ai-content-moderator\backend\ContentModerator\ContentModerator\obj\Debug\net8.0\ContentModerator.genruntimeconfig.cache
 C:\Users\senab\gitbum\ai-content-moderator\backend\ContentModerator\ContentModerator\obj\Debug\net8.0\ref\ContentModerator.dll
+C:\Users\senab\gitbum\ai-content-moderator\backend\ContentModerator\ContentModerator\bin\Debug\net8.0\HtmlAgilityPack.dll
