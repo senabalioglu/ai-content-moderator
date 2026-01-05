@@ -50,5 +50,12 @@ namespace ContentModerator.Controllers
             var messages = await _analyzeMessageService.GetAllMessagesAsync();
             return Ok(messages);
         }
+
+        [HttpDelete("delete")]
+        public async Task<IActionResult> DeleteMessage(string content)
+        {
+            await _analyzeMessageService.DeleteByContent(content);
+            return Ok();
+        }
     }
 }

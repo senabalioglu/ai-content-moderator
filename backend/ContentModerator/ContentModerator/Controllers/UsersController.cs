@@ -18,11 +18,6 @@ namespace ContentModerator.Controllers
             _context = context;
         }
 
-        public class CreateUserRequest
-        {
-            public string Nickname { get; set; } = null!;
-        }
-
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] string username)
         {
