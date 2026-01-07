@@ -60,11 +60,27 @@
   {
     "ContainingType": "ContentModerator.Controllers.UsersController",
     "Method": "GetAll",
-    "RelativePath": "api/Users",
+    "RelativePath": "api/Users/allUsers",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ContentModerator.Controllers.UsersController",
+    "Method": "DeleteUserByUsername",
+    "RelativePath": "api/Users/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {

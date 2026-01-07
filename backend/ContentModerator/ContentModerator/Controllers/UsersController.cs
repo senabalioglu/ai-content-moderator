@@ -45,7 +45,7 @@ namespace ContentModerator.Controllers
             return Ok(newUser);
         }
 
-        [HttpGet]
+        [HttpGet("allUsers")]
         public async Task<IActionResult> GetAll()
         {
             var users = await _context.Users.Include(x => x.Messages).Select(x => new UserDto
@@ -56,7 +56,11 @@ namespace ContentModerator.Controllers
                 {
                     Id = m.Id,
                     Content = m.Content,
-                    Result = m.Result
+                    Result = m.Result,
+                    Created = m.Created,
+                    UserId = m.UserId,
+                    UserName = m.User.UserName,
+                    IsBlocked = m.IsBlocked,
                 }).ToList()
                 
             }).ToListAsync();
@@ -64,5 +68,21 @@ namespace ContentModerator.Controllers
             return Ok(users);
         }
 
+        [HttpDelete("delete")]
+        public async Task<IActionResult> DeleteUserByUsername([FromBody] string userName)
+        {
+            if (string.IsNullOrWhiteSpace(userName)) {
+                return BadRequest("Enter username");
+            }
+
+            var user = await _context.Users.FirstOrDefaultAsync(x => x.UserName == userName);
+            if (user == null) {
+                return BadRequest("Username is null");
+            }
+            _context.Users.Remove(user);
+            await _context.SaveChangesAsync();
+
+            return Ok(user);
+        }
     }
 }

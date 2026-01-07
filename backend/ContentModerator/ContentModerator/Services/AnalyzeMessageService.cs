@@ -85,6 +85,8 @@ namespace ContentModerator.Services
                 Content = m.Content,
                 Result = m.Result,
                 Created = m.Created,
+                UserId = m.UserId,
+                UserName = m.User.UserName,
                 IsBlocked = m.IsBlocked,
             }).ToListAsync();
         }

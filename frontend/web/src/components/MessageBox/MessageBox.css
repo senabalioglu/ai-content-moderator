@@ -1,0 +1,32 @@
+.message-box {
+  background-color: aliceblue;
+  padding: 5px 15px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-bottom: 15px;
+}
+
+.message-box.other {
+  align-self: flex-start;
+  background-color: aliceblue;
+}
+
+.message-box.own {
+  align-self: flex-end;
+  background-color: #313131;
+  border: 1px solid #444444;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 0px;
+}
+
+.message-text{
+    font-size: 20px;
+}
+
+.message-text.own {
+    color: aliceblue;
+}
