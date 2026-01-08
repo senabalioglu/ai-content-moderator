@@ -45,7 +45,7 @@ namespace ContentModerator.Controllers
             return Ok(newUser);
         }
 
-        [HttpGet("allUsers")]
+        [HttpGet("all-users")]
         public async Task<IActionResult> GetAll()
         {
             var users = await _context.Users.Include(x => x.Messages).Select(x => new UserDto
@@ -68,7 +68,7 @@ namespace ContentModerator.Controllers
             return Ok(users);
         }
 
-        [HttpDelete("delete")]
+        [HttpDelete("delete-user")]
         public async Task<IActionResult> DeleteUserByUsername([FromBody] string userName)
         {
             if (string.IsNullOrWhiteSpace(userName)) {

@@ -25,7 +25,7 @@ namespace ContentModerator.Controllers
             public string Content { get; set; } = null!;
         }
 
-        [HttpPost]
+        [HttpPost("analyze-message")]
         public async Task<IActionResult> Analyze([FromBody] AnalyzeRequest request)
         {
             if (string.IsNullOrWhiteSpace(request.Content))
@@ -37,21 +37,21 @@ namespace ContentModerator.Controllers
             return Ok(message);
         }
 
-        [HttpGet("{userId}")]
+        [HttpGet("get-for-user/{userId}")]
         public async Task<IActionResult> GetForUser(Guid userId)
         {
             var messages = await _analyzeMessageService.GetMessageForUserAsync(userId);
             return Ok(messages);
         }
 
-        [HttpGet("all")]
+        [HttpGet("all-messages")]
         public async Task<IActionResult> GetAllMessages()
         {
             var messages = await _analyzeMessageService.GetAllMessagesAsync();
             return Ok(messages);
         }
 
-        [HttpDelete("delete")]
+        [HttpDelete("delete-message")]
         public async Task<IActionResult> DeleteMessage(string content)
         {
             await _analyzeMessageService.DeleteByContent(content);

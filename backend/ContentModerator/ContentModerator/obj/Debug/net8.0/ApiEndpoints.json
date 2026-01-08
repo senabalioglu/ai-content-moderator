@@ -1,8 +1,18 @@
 [
   {
     "ContainingType": "ContentModerator.Controllers.MessagesController",
+    "Method": "GetAllMessages",
+    "RelativePath": "api/Messages/all-messages",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ContentModerator.Controllers.MessagesController",
     "Method": "Analyze",
-    "RelativePath": "api/Messages",
+    "RelativePath": "api/Messages/analyze-message",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -17,34 +27,8 @@
   },
   {
     "ContainingType": "ContentModerator.Controllers.MessagesController",
-    "Method": "GetForUser",
-    "RelativePath": "api/Messages/{userId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userId",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ContentModerator.Controllers.MessagesController",
-    "Method": "GetAllMessages",
-    "RelativePath": "api/Messages/all",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ContentModerator.Controllers.MessagesController",
     "Method": "DeleteMessage",
-    "RelativePath": "api/Messages/delete",
+    "RelativePath": "api/Messages/delete-message",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -58,9 +42,25 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ContentModerator.Controllers.MessagesController",
+    "Method": "GetForUser",
+    "RelativePath": "api/Messages/get-for-user/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ContentModerator.Controllers.UsersController",
     "Method": "GetAll",
-    "RelativePath": "api/Users/allUsers",
+    "RelativePath": "api/Users/all-users",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -70,7 +70,7 @@
   {
     "ContainingType": "ContentModerator.Controllers.UsersController",
     "Method": "DeleteUserByUsername",
-    "RelativePath": "api/Users/delete",
+    "RelativePath": "api/Users/delete-user",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,

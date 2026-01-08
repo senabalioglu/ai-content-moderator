@@ -8,7 +8,7 @@ function Home({ currentUser }) {
 
   useEffect(() => {
     const fetchMessages = async () => {
-      fetch(`${apiUrl}/Messages/all`)
+      fetch(`${apiUrl}/Messages/all-messages`)
         .then((res) => res.json())
         .then((data) => setData(data))
         .catch((err) => console.log(err));
@@ -27,7 +27,7 @@ function Home({ currentUser }) {
     };
 
     try {
-      const res = await fetch(`${apiUrl}/Messages`, {
+      const res = await fetch(`${apiUrl}/Messages/analyze-message`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newMessage),
@@ -56,6 +56,7 @@ function Home({ currentUser }) {
             messageData={x}
             isOwnMessage={x.userId === currentUser.id}
             isMessageBlocked={x.isBlocked}
+            rawResult={x.result}
           />
         ))}
       </div>

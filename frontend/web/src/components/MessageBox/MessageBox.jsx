@@ -1,6 +1,20 @@
 import "../MessageBox/MessageBox.css";
 
-const MessageBox = ({ messageData, isOwnMessage, isMessageBlocked }) => {
+const MessageBox = ({
+  messageData,
+  isOwnMessage,
+  isMessageBlocked,
+  rawResult,
+}) => {
+  const parsedResult = JSON.parse(rawResult);
+
+  const blockedCategories = Object.entries(parsedResult)
+    .filter(([category, data]) => {
+      const dangerousLabels = ["toxic", "hate", "nsfw", "spam", "LABEL_1"];
+      return dangerousLabels.includes(data.label) && data.score > 0.5;
+    })
+    .map(([category]) => category);
+
   return (
     <>
       {isMessageBlocked ? (
@@ -10,7 +24,14 @@ const MessageBox = ({ messageData, isOwnMessage, isMessageBlocked }) => {
             {messageData.userName}{" "}
           </h3>
           <div>
-            <p style={{ color: `${isOwnMessage ? "aliceblue" : "black"}`, padding: 5 }}>Message is blocked</p>
+            <p
+              style={{
+                color: `${isOwnMessage ? "aliceblue" : "black"}`,
+              }}
+            >
+              Message is blocked due to it's content of
+            </p>
+            <h4 style={{ color: "red" }}> {blockedCategories.join(", ")} </h4>
           </div>
         </div>
       ) : (

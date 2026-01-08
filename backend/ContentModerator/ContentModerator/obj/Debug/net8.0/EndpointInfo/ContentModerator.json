@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Messages": {
+    "/api/Messages/analyze-message": {
       "post": {
         "tags": [
           "Messages"
@@ -36,7 +36,7 @@
         }
       }
     },
-    "/api/Messages/{userId}": {
+    "/api/Messages/get-for-user/{userId}": {
       "get": {
         "tags": [
           "Messages"
@@ -59,7 +59,7 @@
         }
       }
     },
-    "/api/Messages/all": {
+    "/api/Messages/all-messages": {
       "get": {
         "tags": [
           "Messages"
@@ -71,7 +71,7 @@
         }
       }
     },
-    "/api/Messages/delete": {
+    "/api/Messages/delete-message": {
       "delete": {
         "tags": [
           "Messages"
@@ -123,7 +123,7 @@
         }
       }
     },
-    "/api/Users/allUsers": {
+    "/api/Users/all-users": {
       "get": {
         "tags": [
           "Users"
@@ -135,7 +135,7 @@
         }
       }
     },
-    "/api/Users/delete": {
+    "/api/Users/delete-user": {
       "delete": {
         "tags": [
           "Users"
