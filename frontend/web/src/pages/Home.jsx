@@ -55,6 +55,7 @@ function Home({ currentUser }) {
             key={x.id}
             messageData={x}
             isOwnMessage={x.userId === currentUser.id}
+            isMessageBlocked={x.isBlocked}
           />
         ))}
       </div>
