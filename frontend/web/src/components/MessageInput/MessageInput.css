@@ -1,16 +1,14 @@
-.input-container{
+.message-input-container{
     background-color: aliceblue;
-    max-width: 250px;
+    min-width: 550px;
     padding: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+    
     border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-top: 15px;
 }
 
-.username-input{
+.message-input{
     background-color: aliceblue;
     border: none;
     outline: none; 
@@ -18,15 +16,22 @@
     font-family: "Poppins", sans-serif;
 }
 
-.username-input::placeholder{
+.message-input::placeholder{
     color: black;
 }
 
-.login-button{
+.send-button{
     border: none;
     background-color:rgb(51, 51, 51);
     color: aliceblue;
     border-radius: 2px;
     padding: 5px 10px;
     font-family: "Poppins", sans-serif;
+}
+
+.message-send-form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }

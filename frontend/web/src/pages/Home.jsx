@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import MessageBox from "../components/MessageBox/MessageBox";
+import MessageInput from "../components/MessageInput/MessageInput";
 
 function Home({ currentUser }) {
   const [data, setData] = useState([]);
@@ -19,18 +20,47 @@ function Home({ currentUser }) {
     return () => clearInterval(interval);
   }, []);
 
+  const handleSendMessage = async (text) => {
+    const newMessage = {
+      userId: currentUser.id,
+      content: text,
+    };
+
+    try {
+      const res = await fetch(`${apiUrl}/Messages`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newMessage),
+      });
+
+      if (!res.ok) throw new Error("Mesaj gönderilemedi!");
+
+      const savedMessage = await res.json();
+
+      setData((prev) => [...prev, savedMessage]);
+    } catch (err) {
+      console.error("Gönderim hatası:", err);
+    }
+  };
+
   return (
-    <div className="page-wrapper" >
-      <h1> User Logged In, Welcome {currentUser?.userName} </h1>
-      <div className="container" >
+    <div className="page-wrapper">
+      <h1 style={{ color: "aliceblue" }}>
+        {" "}
+        User Logged In, Welcome {currentUser?.userName} 😊{" "}
+      </h1>
+      <div className="container">
         {data.map((x) => (
-          <MessageBox 
-          key={x.id}
-          messageData={x}
-          isOwnMessage={x.userId === currentUser.id}
+          <MessageBox
+            key={x.id}
+            messageData={x}
+            isOwnMessage={x.userId === currentUser.id}
           />
         ))}
       </div>
+      <MessageInput
+        onSend={handleSendMessage}
+      />
     </div>
   );
 }
