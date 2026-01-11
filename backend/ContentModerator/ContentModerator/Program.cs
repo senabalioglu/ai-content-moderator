@@ -16,6 +16,12 @@ builder.Services.AddCors(options =>
     });
 });
 
+builder.WebHost.ConfigureKestrel(options =>
+{
+    var port = Environment.GetEnvironmentVariable("PORT") ?? "10000";
+    options.ListenAnyIP(int.Parse(port));
+});
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -38,8 +44,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCors("AllowSpecificOrigins");
-
-app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
